@@ -1,5 +1,6 @@
 interface Props { children: JSX.Element | JSX.Element[] }
 
+
 import Sidebar from './Sidebar';
 
 export const Layout = ({ children }: Props) => {

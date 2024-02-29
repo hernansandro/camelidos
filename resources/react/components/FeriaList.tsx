@@ -3,7 +3,7 @@ import Feria from "./Feria";
 import {reorderFerias} from "../utils";
 
 const getItemStyle = (isDragging, draggableStyle) => ({
-    background: isDragging ? 'lightgreen' : 'grey',
+    background: isDragging ? 'lightgreen' : 'var(--light)',
     ...draggableStyle,
 });
 
@@ -25,7 +25,10 @@ function FeriaList({ ferias, setIsModalEditOpen, setModalEditFeria, setIsModalDe
     return (
         <DragDropContext onDragEnd={handleDragEnd}>
             <Droppable droppableId="droppable">
+                
                 {(provided) => (
+                    <div>
+                        <h2>Todas las Ferias</h2>
                     <ul {...provided.droppableProps} ref={provided.innerRef}>
                         {ferias.map((feria, index) => (
                             <Draggable key={feria.id.toString()} draggableId={feria.id.toString()} index={index}>
@@ -48,6 +51,7 @@ function FeriaList({ ferias, setIsModalEditOpen, setModalEditFeria, setIsModalDe
                         ))}
                         {provided.placeholder}
                     </ul>
+                    </div>
                 )}
             </Droppable>
         </DragDropContext>

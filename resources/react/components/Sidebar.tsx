@@ -21,14 +21,14 @@ function Sidebar()
                             </div>
                         </div>
                         <div className="navbar-nav w-100">
-                            <a href="#" className="nav-item nav-link active"><i className="fa fa-tachometer-alt me-2"></i><Link to="/">Home</Link></a>                
-                            <a href="#" className="nav-item nav-link"><i className="fa fa-th me-2"></i> <Link to="/Login">Login</Link></a>
+                                          
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-th me-2"></i> <Link to="/">Home</Link></a>
                         <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i><Link to="/feria">Feria</Link></a>
-                            <a href="planilla.html" className="nav-item nav-link"><i className="fa fa-keyboard me-2"></i>CALIFICACIONES</a>
-                            <a href="ganadores.html" className="nav-item nav-link"><i className="fa fa-table me-2"></i>GANADORES</a>
-                            <a href="premios.html" className="nav-item nav-link"><i className="fa fa-chart-bar me-2"></i>PREMIACION</a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-keyboard me-2"></i>Calificaciones</a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i>Ganadores</a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-chart-bar me-2"></i>Premios</a>
                             <div className="nav-item dropdown">
-                                <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="far fa-file-alt me-2"></i>REPORTES</a>
+                                <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="far fa-file-alt me-2"></i>Reportes</a>
                                 <div className="dropdown-menu bg-transparent border-0">
                                     <a href="signin.html" className="dropdown-item">Sign In</a>
                                     <a href="signup.html" className="dropdown-item">Sign Up</a>
