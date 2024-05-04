@@ -13,16 +13,16 @@ export const LoginPage = () => {
     let navigate: NavigateFunction = useNavigate();
 
     let login = () => {
-        
-        setIsFormSubmitting(true);
-        AuthService.login({ email, password })
-            .then((response) => {
-                navigate("/dashboard");
-            })
-            .catch((e) => {
-                setError(e.response.data.message);
-                setIsFormSubmitting(false);
-            });
+        navigate("/dashboard");
+        // setIsFormSubmitting(true);
+        // AuthService.login({ email, password })
+        //     .then((response) => {
+        //         navigate("/dashboard");
+        //     })
+        //     .catch((e) => {
+        //         setError(e.response.data.message);
+        //         setIsFormSubmitting(false);
+        //     });
     };
 
     return (

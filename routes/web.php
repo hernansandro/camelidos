@@ -96,7 +96,7 @@ Route::group(['prefix' => '/', 'as' => 'premios.'], function () {
     Route::get('/', [PremioController::class, 'index'])->name('index');
 });
 
-Route::group(['prefix' => '/', 'as' => 'usuarios.'], function () {
-    Route::get('/', [UserController::class, 'index'])->name('index');
-});
+// Route::group(['prefix' => '/', 'as' => 'usuarios.'], function () {
+//     Route::get('/', [UserController::class, 'index'])->name('index');
+// });
 

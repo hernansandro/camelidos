@@ -8,7 +8,7 @@ use App\Http\Controllers\FeriaController;
 use App\Http\Controllers\JuradoController;
 use App\Http\Controllers\ParticipanteController;
 use App\Http\Controllers\PremioController;
-use App\Http\Controllers\UserController;
+//use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,15 +97,15 @@ Route::group(['prefix' => '/premios', 'as' => 'premios.'], function () {
   Route::put('/', [PremioController::class, 'reorder']);
 });
 
-Route::group(['prefix' => '/usuarios', 'as' => 'usuarios.'], function () {
-  Route::get('/', [UserController::class, 'list']);
-  Route::get('/{id}', [UserController::class, 'get'])
-  ->where('id', '[1-9][0-9]*');
-  Route::post('/', [UserController::class, 'store']);
-  Route::put('/{id}', [UserController::class, 'update'])
-    ->where('id', '[1-9][0-9]*');
-  Route::delete('/{id}', [UserController::class, 'delete'])
-     ->where('id', '[1-9][0-9]*');
-  Route::put('/', [UserController::class, 'reorder']);
-});
+// Route::group(['prefix' => '/usuarios', 'as' => 'usuarios.'], function () {
+//   Route::get('/', [UserController::class, 'list']);
+//   Route::get('/{id}', [UserController::class, 'get'])
+//   ->where('id', '[1-9][0-9]*');
+//   Route::post('/', [UserController::class, 'store']);
+//   Route::put('/{id}', [UserController::class, 'update'])
+//     ->where('id', '[1-9][0-9]*');
+//   Route::delete('/{id}', [UserController::class, 'delete'])
+//      ->where('id', '[1-9][0-9]*');
+//   Route::put('/', [UserController::class, 'reorder']);
+// });
 
