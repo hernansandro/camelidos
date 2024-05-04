@@ -2,8 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\CalificacionController;
+use App\Http\Controllers\ConcursoController;
 use App\Http\Controllers\FeriaController;
+use App\Http\Controllers\JuradoController;
+use App\Http\Controllers\ParticipanteController;
+use App\Http\Controllers\PremioController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +75,28 @@ Route::get('/latino', function (Request $request) {
 Route::group(['prefix' => '/', 'as' => 'ferias.'], function () {
     Route::get('/', [FeriaController::class, 'index'])->name('index');
 });
+
+Route::group(['prefix' => '/', 'as' => 'calificaciones.'], function () {
+    Route::get('/', [CalificacionController::class, 'index'])->name('index');
+});
+
+Route::group(['prefix' => '/', 'as' => 'concursos.'], function () {
+    Route::get('/', [ConcursoController::class, 'index'])->name('index');
+});
+
+Route::group(['prefix' => '/', 'as' => 'participantes.'], function () {
+    Route::get('/', [ParticipanteController::class, 'index'])->name('index');
+});
+
+Route::group(['prefix' => '/', 'as' => 'jurados.'], function () {
+    Route::get('/', [JuradoController::class, 'index'])->name('index');
+});
+
+Route::group(['prefix' => '/', 'as' => 'premios.'], function () {
+    Route::get('/', [PremioController::class, 'index'])->name('index');
+});
+
+Route::group(['prefix' => '/', 'as' => 'usuarios.'], function () {
+    Route::get('/', [UserController::class, 'index'])->name('index');
+});
+
