@@ -5,19 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Feria extends Model
+class Premio extends Model
 {
     use HasFactory;
-    
-    protected $table = 'ferias';
-    protected $primaryKey = null; 
-    public $incrementing = false;
+
+    protected $table = 'premios';
     public $timestamps = false;
     protected $fillable = [
         'id', // primary key, auto-increment, integer
-        'nombre', // string
-        'departamento',
-        'fecha'
+        'feria_id', // string
+        'numero_ganadores',
+        'monto_total'
     ];
 }
-

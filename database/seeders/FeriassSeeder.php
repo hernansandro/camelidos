@@ -14,6 +14,7 @@ class FeriassSeeder extends Seeder
     {
         for ($i = 1; $i <= 3; $i++) {
             Feria::create([
+                'id' => $i,
                 'nombre' => "Feria $i",
                 'fecha' => "2024-01-$i" ,
                 'departamento' => 'Cochabamba'
