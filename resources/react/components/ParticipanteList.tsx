@@ -1,6 +1,6 @@
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import Participante from "./Participante";
-import {reorderParticipantes} from "../utils";
+import {reorderParticipantes} from "../participante-utils";
 
 const getItemStyle = (isDragging, draggableStyle) => ({
     background: isDragging ? 'lightgreen' : 'var(--light)',

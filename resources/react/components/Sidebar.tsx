@@ -23,10 +23,13 @@ function Sidebar()
                         <div className="navbar-nav w-100">
                                           
                             <a href="#" className="nav-item nav-link"><i className="fa fa-th me-2"></i> <Link to="/">Home</Link></a>
-                        <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i><Link to="/feria">Feria</Link></a>
-                            <a href="#" className="nav-item nav-link"><i className="fa fa-keyboard me-2"></i>Calificaciones</a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i><Link to="/feria">Feria</Link></a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i><Link to="/concurso">Concurso</Link></a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i><Link to="/participante">Particpante</Link></a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i><Link to="/jurado">Jurado</Link></a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i><Link to="/premio">Premio</Link></a>
+                            <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i><Link to="/calificacion">Calificacion</Link></a>
                             <a href="#" className="nav-item nav-link"><i className="fa fa-table me-2"></i>Ganadores</a>
-                            <a href="#" className="nav-item nav-link"><i className="fa fa-chart-bar me-2"></i>Premios</a>
                             <div className="nav-item dropdown">
                                 <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="far fa-file-alt me-2"></i>Reportes</a>
                                 <div className="dropdown-menu bg-transparent border-0">

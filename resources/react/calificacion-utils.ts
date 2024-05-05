@@ -10,10 +10,10 @@ export const getCalificacions = async () => {
 
     try {
         const response = await axiosConfig.get(`/calificaciones`);
-        const { success, calificaciones, message } = response.data;
+        const { success, calificacions, message } = response.data;
 
         if (success) {
-            return calificaciones;
+            return calificacions;
         } else {
             toast.error(message);
             return [];

@@ -13,11 +13,11 @@ use Illuminate\Http\JsonResponse;
 
 class CalificacionController extends Controller
 {
-    protected ?CalificacionService $feriaService = null;
+    protected ?CalificacionService $calificacionService = null;
 
-    public function __construct(CalificacionService $feriaService)
+    public function __construct(CalificacionService $calificacionService)
     {
-        $this->feriaService = $feriaService;
+        $this->calificacionService = $calificacionService;
     }
 
     public function index()
@@ -31,18 +31,18 @@ class CalificacionController extends Controller
 
     public function list(CalificacionRequest $request): JsonResponse
     {
-        $ferias = $this->feriaService->getAll();
+        $calificacions = $this->calificacionService->getAll();
 
         return response()->json([
             'success' => true,
-            'ferias' => $ferias,
+            'calificacions' => $calificacions,
             'message' => "Calificacions retrieved successfully.",
         ]); // 200
     }
 
     public function store(CalificacionRequest $request): JsonResponse
     {
-        $this->feriaService->store($request->all());
+        $this->calificacionService->store($request->all());
 
         return response()->json([
             'success' => true,
@@ -52,12 +52,12 @@ class CalificacionController extends Controller
 
     public function get(int $id): JsonResponse
     {
-        $feria = $this->feriaService->getById($id);
+        $calificacion = $this->calificacionService->getById($id);
 
-        if ($feria) {
+        if ($calificacion) {
             return response()->json([
                 'success' => true,
-                'feria' => $feria,
+                'calificacion' => $calificacion,
                 'message' => "Calificacion retrieved successfully.",
             ]); // 200
         } else {
@@ -70,7 +70,7 @@ class CalificacionController extends Controller
 
     public function update(CalificacionRequest $request, int $id): JsonResponse
     {
-        $this->feriaService->update($id, $request->all());
+        $this->calificacionService->update($id, $request->all());
 
         return response()->json([
             'success' => true,
@@ -82,7 +82,7 @@ class CalificacionController extends Controller
     {
         echo $id;
         echo "this is de id";
-        $this->feriaService->delete($id);
+        $this->calificacionService->delete($id);
 
         return response()->json([
             'success' => true,

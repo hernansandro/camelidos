@@ -1,6 +1,6 @@
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import Concurso from "./Concurso";
-import {reorderConcursos} from "../utils";
+import {reorderConcursos} from "../concurso-utils";
 
 const getItemStyle = (isDragging, draggableStyle) => ({
     background: isDragging ? 'lightgreen' : 'var(--light)',
@@ -28,7 +28,7 @@ function ConcursoList({ concursos, setIsModalEditOpen, setModalEditConcurso, set
                 
                 {(provided) => (
                     <div>
-                        <h2>Todas las Concursos</h2>
+                        <h2>Todas los Concursos</h2>
                     <ul {...provided.droppableProps} ref={provided.innerRef}>
                         {concursos.map((concurso, index) => (
                             <Draggable key={concurso.id.toString()} draggableId={concurso.id.toString()} index={index}>

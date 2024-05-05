@@ -1,6 +1,6 @@
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import Calificacion from "./Calificacion";
-import {reorderCalificacions} from "../utils";
+import {reorderCalificacions} from "../calificacion-utils";
 
 const getItemStyle = (isDragging, draggableStyle) => ({
     background: isDragging ? 'lightgreen' : 'var(--light)',

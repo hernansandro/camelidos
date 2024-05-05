@@ -14,11 +14,11 @@ use Illuminate\Http\JsonResponse;
 
 class ConcursoController extends Controller
 {
-    protected ?ConcursoService $feriaService = null;
+    protected ?ConcursoService $concursoService = null;
 
-    public function __construct(ConcursoService $feriaService)
+    public function __construct(ConcursoService $concursoService)
     {
-        $this->feriaService = $feriaService;
+        $this->concursoService = $concursoService;
     }
 
     public function index()
@@ -32,18 +32,18 @@ class ConcursoController extends Controller
 
     public function list(ConcursoRequest $request): JsonResponse
     {
-        $ferias = $this->feriaService->getAll();
+        $concursos = $this->concursoService->getAll();
 
         return response()->json([
             'success' => true,
-            'ferias' => $ferias,
+            'concursos' => $concursos,
             'message' => "Concursos retrieved successfully.",
         ]); // 200
     }
 
     public function store(ConcursoRequest $request): JsonResponse
     {
-        $this->feriaService->store($request->all());
+        $this->concursoService->store($request->all());
 
         return response()->json([
             'success' => true,
@@ -53,12 +53,12 @@ class ConcursoController extends Controller
 
     public function get(int $id): JsonResponse
     {
-        $feria = $this->feriaService->getById($id);
+        $concurso = $this->concursoService->getById($id);
 
-        if ($feria) {
+        if ($concurso) {
             return response()->json([
                 'success' => true,
-                'feria' => $feria,
+                'concurso' => $concurso,
                 'message' => "Concurso retrieved successfully.",
             ]); // 200
         } else {
@@ -71,7 +71,7 @@ class ConcursoController extends Controller
 
     public function update(ConcursoRequest $request, int $id): JsonResponse
     {
-        $this->feriaService->update($id, $request->all());
+        $this->concursoService->update($id, $request->all());
 
         return response()->json([
             'success' => true,
@@ -83,7 +83,7 @@ class ConcursoController extends Controller
     {
         echo $id;
         echo "this is de id";
-        $this->feriaService->delete($id);
+        $this->concursoService->delete($id);
 
         return response()->json([
             'success' => true,

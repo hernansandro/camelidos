@@ -1,6 +1,6 @@
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import Premio from "./Premio";
-import {reorderPremios} from "../utils";
+import {reorderPremios} from "../premio-utils";
 
 const getItemStyle = (isDragging, draggableStyle) => ({
     background: isDragging ? 'lightgreen' : 'var(--light)',

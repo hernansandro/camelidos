@@ -10,6 +10,13 @@ import NotFound from "./views/NotFound";
 import { Layout2  } from "./components/Layout2";
 import { LoginPage } from "./pages/LoginPage";
 import Main from "./Main";
+import MainCalificacion from "./MainCalificacion";
+import MainConcurso from "./MainConcurso";
+import MainJurado from "./MainJurado";
+import MainParticipante from "./MainParticipante";
+import MainPremio from "./MainPremio";
+
+
 
 export function App(): JSX.Element {
     return (
@@ -25,7 +32,12 @@ export function App(): JSX.Element {
                 
                 {/* Authenticated */}
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/calificacion" element={<MainCalificacion />} />
+                <Route path="/concurso" element={<MainConcurso />} />
                 <Route path="/feria" element={<Main />} />
+                <Route path="/jurado" element={<MainJurado />} />
+                <Route path="/participante" element={<MainParticipante />} />
+                <Route path="/premio" element={<MainPremio />} />
             </Route>
             
              

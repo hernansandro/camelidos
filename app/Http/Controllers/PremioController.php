@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 
-use App\Http\Requests\CreatePremioRequest;
+use App\Http\Requests\PremioRequest;
 
 use App\Services\PremioService;
 
@@ -13,11 +13,11 @@ use Illuminate\Http\JsonResponse;
 
 class PremioController extends Controller
 {
-    protected ?PremioService $feriaService = null;
+    protected ?PremioService $premioService = null;
 
-    public function __construct(PremioService $feriaService)
+    public function __construct(PremioService $premioService)
     {
-        $this->feriaService = $feriaService;
+        $this->premioService = $premioService;
     }
 
     public function index()
@@ -31,18 +31,18 @@ class PremioController extends Controller
 
     public function list(PremioRequest $request): JsonResponse
     {
-        $ferias = $this->feriaService->getAll();
+        $premios = $this->premioService->getAll();
 
         return response()->json([
             'success' => true,
-            'ferias' => $ferias,
+            'premios' => $premios,
             'message' => "Premios retrieved successfully.",
         ]); // 200
     }
 
     public function store(PremioRequest $request): JsonResponse
     {
-        $this->feriaService->store($request->all());
+        $this->premioService->store($request->all());
 
         return response()->json([
             'success' => true,
@@ -52,12 +52,12 @@ class PremioController extends Controller
 
     public function get(int $id): JsonResponse
     {
-        $feria = $this->feriaService->getById($id);
+        $premio = $this->premioService->getById($id);
 
-        if ($feria) {
+        if ($premio) {
             return response()->json([
                 'success' => true,
-                'feria' => $feria,
+                'premio' => $premio,
                 'message' => "Premio retrieved successfully.",
             ]); // 200
         } else {
@@ -70,7 +70,7 @@ class PremioController extends Controller
 
     public function update(PremioRequest $request, int $id): JsonResponse
     {
-        $this->feriaService->update($id, $request->all());
+        $this->premioService->update($id, $request->all());
 
         return response()->json([
             'success' => true,
@@ -82,7 +82,7 @@ class PremioController extends Controller
     {
         echo $id;
         echo "this is de id";
-        $this->feriaService->delete($id);
+        $this->premioService->delete($id);
 
         return response()->json([
             'success' => true,

@@ -14,11 +14,11 @@ use Illuminate\Http\JsonResponse;
 
 class JuradoController extends Controller
 {
-    protected ?JuradoService $feriaService = null;
+    protected ?JuradoService $juradoService = null;
 
-    public function __construct(JuradoService $feriaService)
+    public function __construct(JuradoService $juradoService)
     {
-        $this->feriaService = $feriaService;
+        $this->juradoService = $juradoService;
     }
 
     public function index()
@@ -32,18 +32,18 @@ class JuradoController extends Controller
 
     public function list(JuradoRequest $request): JsonResponse
     {
-        $ferias = $this->feriaService->getAll();
+        $jurados = $this->juradoService->getAll();
 
         return response()->json([
             'success' => true,
-            'ferias' => $ferias,
+            'jurados' => $jurados,
             'message' => "Jurados retrieved successfully.",
         ]); // 200
     }
 
     public function store(JuradoRequest $request): JsonResponse
     {
-        $this->feriaService->store($request->all());
+        $this->juradoService->store($request->all());
 
         return response()->json([
             'success' => true,
@@ -53,12 +53,12 @@ class JuradoController extends Controller
 
     public function get(int $id): JsonResponse
     {
-        $feria = $this->feriaService->getById($id);
+        $jurado = $this->juradoService->getById($id);
 
-        if ($feria) {
+        if ($jurado) {
             return response()->json([
                 'success' => true,
-                'feria' => $feria,
+                'jurado' => $jurado,
                 'message' => "Jurado retrieved successfully.",
             ]); // 200
         } else {
@@ -71,7 +71,7 @@ class JuradoController extends Controller
 
     public function update(JuradoRequest $request, int $id): JsonResponse
     {
-        $this->feriaService->update($id, $request->all());
+        $this->juradoService->update($id, $request->all());
 
         return response()->json([
             'success' => true,
@@ -83,7 +83,7 @@ class JuradoController extends Controller
     {
         echo $id;
         echo "this is de id";
-        $this->feriaService->delete($id);
+        $this->juradoService->delete($id);
 
         return response()->json([
             'success' => true,

@@ -14,11 +14,11 @@ use Illuminate\Http\JsonResponse;
 
 class ParticipanteController extends Controller
 {
-    protected ?ParticipanteService $feriaService = null;
+    protected ?ParticipanteService $participanteService = null;
 
-    public function __construct(ParticipanteService $feriaService)
+    public function __construct(ParticipanteService $participanteService)
     {
-        $this->feriaService = $feriaService;
+        $this->participanteService = $participanteService;
     }
 
     public function index()
@@ -32,18 +32,18 @@ class ParticipanteController extends Controller
 
     public function list(ParticipanteRequest $request): JsonResponse
     {
-        $ferias = $this->feriaService->getAll();
+        $participantes = $this->participanteService->getAll();
 
         return response()->json([
             'success' => true,
-            'ferias' => $ferias,
+            'participantes' => $participantes,
             'message' => "Participantes retrieved successfully.",
         ]); // 200
     }
 
     public function store(ParticipanteRequest $request): JsonResponse
     {
-        $this->feriaService->store($request->all());
+        $this->participanteService->store($request->all());
 
         return response()->json([
             'success' => true,
@@ -53,12 +53,12 @@ class ParticipanteController extends Controller
 
     public function get(int $id): JsonResponse
     {
-        $feria = $this->feriaService->getById($id);
+        $participante = $this->participanteService->getById($id);
 
-        if ($feria) {
+        if ($participante) {
             return response()->json([
                 'success' => true,
-                'feria' => $feria,
+                'participante' => $participante,
                 'message' => "Participante retrieved successfully.",
             ]); // 200
         } else {
@@ -71,7 +71,7 @@ class ParticipanteController extends Controller
 
     public function update(ParticipanteRequest $request, int $id): JsonResponse
     {
-        $this->feriaService->update($id, $request->all());
+        $this->participanteService->update($id, $request->all());
 
         return response()->json([
             'success' => true,
@@ -83,7 +83,7 @@ class ParticipanteController extends Controller
     {
         echo $id;
         echo "this is de id";
-        $this->feriaService->delete($id);
+        $this->participanteService->delete($id);
 
         return response()->json([
             'success' => true,

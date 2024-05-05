@@ -3,7 +3,7 @@ import { Layout } from "./components/Layout"
 import { Layout2 } from "./components/Layout2"
 import { AppRouter } from "./routes/AppRouter"
 import { App } from './Router'
-import Main from "./Main";
+//import Main from "./Main";
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap-icons/font/bootstrap-icons.css";

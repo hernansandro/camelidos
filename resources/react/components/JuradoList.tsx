@@ -1,6 +1,6 @@
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import Jurado from "./Jurado";
-import {reorderJurados} from "../utils";
+import {reorderJurados} from "../jurado-utils";
 
 const getItemStyle = (isDragging, draggableStyle) => ({
     background: isDragging ? 'lightgreen' : 'var(--light)',
